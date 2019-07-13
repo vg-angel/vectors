@@ -36,7 +36,7 @@ class Vector2D extends Vector{
     }
 
 
-    
+
     unit(){
       return Vector2D.unit(new Vector2D(this.x, this.y))
     }
@@ -101,6 +101,14 @@ class Vector2D extends Vector{
     }
     static clone(vec: Vector2D){
         return new Vector2D(vec.x, vec.y)
+    }
+    static dot(vec1: Vector2D, vec2: Vector2D){
+        return vec1.x*vec2.x + vec1.y*vec2.y
+    }
+    static angleBeet(vec1: Vector2D, vec2: Vector2D){
+        let dot = Vector2D.dot(vec1, vec2),
+            l1 = vec1.len, l2 = vec2.len;
+        return Math.acos(dot/l1*l2)
     }
 
 
