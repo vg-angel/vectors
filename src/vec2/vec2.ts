@@ -59,7 +59,7 @@ class Vector2D extends Vector{
             " x: ",   this.x,  "\n",
              "y: ",   this.y,  "\n",
              "len: ", this.len,  "\n",
-             "ang: ", this.ang*180/Math.PI), "\n"
+             "ang: ", this.ang*180/Math.PI), "degrees" , "\n"
         return this
     }
     static distance(vec1: Vector2D, vec2: Vector2D){

@@ -43,14 +43,19 @@ class Vector2D extends vector_1.default {
     update(x, y) {
         this.x = x;
         this.y = y;
+        return this;
     }
     neg() {
         this.x *= -1;
         this.y *= -1;
         return this;
     }
+    zero() {
+        this.x = 0;
+        this.y = 0;
+    }
     log() {
-        console.log(" x: ", this.x, "\n", "y: ", this.y, "\n", "len: ", this.len, "\n", "ang: ", this.ang * 180 / Math.PI), "\n";
+        console.log(" x: ", this.x, "\n", "y: ", this.y, "\n", "len: ", this.len, "\n", "ang: ", this.ang * 180 / Math.PI), "degrees", "\n";
         return this;
     }
     static distance(vec1, vec2) {
@@ -71,8 +76,8 @@ class Vector2D extends vector_1.default {
     }
     static areEquals(vec1, vec2, boundary) {
         let b = boundary || 1;
-        let test = Math.abs(vec1.len - vec2.len) <= Number.EPSILON * b &&
-            Math.abs(vec1.ang - vec2.ang) <= Number.EPSILON * b;
+        let test = Math.abs(vec1.len - vec2.len) <= Number.EPSILON + b &&
+            Math.abs(vec1.ang - vec2.ang) <= Number.EPSILON + b;
         return test;
     }
     static clone(vec) {
