@@ -5,7 +5,7 @@ module.exports = {
     output: {
         filename: "index.js",
         path: path.join(__dirname, "dist"),
-        library: "LL",
+        library: "V",
         libraryTarget: "var"
     },
     devServer: {
