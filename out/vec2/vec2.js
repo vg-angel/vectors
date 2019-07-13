@@ -30,12 +30,10 @@ class Vector2D extends vector_1.default {
     set len(len) {
         this.x = Math.cos(this.ang) * len;
         this.y = Math.sin(this.ang) * len;
-        this.data[2] = Math.hypot(this.y, this.x);
     }
     set ang(ang) {
         this.x = Math.cos(ang) * this.len;
         this.y = Math.sin(ang) * this.len;
-        this.data[3] = Math.atan2(this.y, this.x);
     }
     unit() {
         return Vector2D.unit(new Vector2D(this.x, this.y));
@@ -56,6 +54,10 @@ class Vector2D extends vector_1.default {
     }
     log() {
         console.log(" x: ", this.x, "\n", "y: ", this.y, "\n", "len: ", this.len, "\n", "ang: ", this.ang * 180 / Math.PI), "degrees", "\n";
+        return this;
+    }
+    rotate(angle) {
+        this.ang = this.ang + angle;
         return this;
     }
     static distance(vec1, vec2) {

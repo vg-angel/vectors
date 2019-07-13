@@ -29,12 +29,10 @@ class Vector2D extends Vector{
     set len(len: number){
         this.x = Math.cos(this.ang)*len
         this.y = Math.sin(this.ang)*len
-        this.data[2] = Math.hypot(this.y, this.x)
     }
     set ang(ang: number){
         this.x = Math.cos(ang)*this.len
         this.y = Math.sin(ang)*this.len
-        this.data[3] = Math.atan2(this.y, this.x)
     }
 
     unit(){
@@ -62,13 +60,17 @@ class Vector2D extends Vector{
              "ang: ", this.ang*180/Math.PI), "degrees" , "\n"
         return this
     }
+    rotate(angle: number){
+        this.ang = this.ang + angle
+        return this
+    }
     static distance(vec1: Vector2D, vec2: Vector2D){
         let dy = vec1.y - vec2.y,
             dx = vec1.x - vec2.x;
         return Math.hypot(dy, dx)
     }
     static unit(vec1?: Vector2D){
-        let output
+        let output: Vector2D
         if(vec1){
             let {len, x, y} = vec1
             output = new Vector2D(x/len, y/len)
