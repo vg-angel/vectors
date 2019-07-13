@@ -3,7 +3,7 @@ import { isRegExp } from "util";
 
 class Vector2D extends Vector{
     constructor(x: number, y: number){
-        super(x, y)    // this gives us 'this.data' property
+        super(x, y)
         return this
     }
     get x(){
@@ -35,8 +35,10 @@ class Vector2D extends Vector{
         this.y = Math.sin(ang)*len
     }
 
+
+    
     unit(){
-      return Vector2D.unit(new Vector2D(this.x, this.y))  
+      return Vector2D.unit(new Vector2D(this.x, this.y))
     }
     update(x: number, y: number){
         this.x = x
@@ -65,14 +67,15 @@ class Vector2D extends Vector{
              "ang: ", (()=>{
                  let ang = this.ang
                  if(this.ang < 0){
-                     console.log(ang)
                      ang = Math.PI*2 + ang
                  }
                  return ang * 180/Math.PI
-             })()
-             )
-                return "data"
+             })())
+            return "data"
     }
+
+
+
     static distance(vec1: Vector2D, vec2: Vector2D){
         let dy = vec1.y - vec2.y,
             dx = vec1.x - vec2.x;
@@ -99,14 +102,16 @@ class Vector2D extends Vector{
     static clone(vec: Vector2D){
         return new Vector2D(vec.x, vec.y)
     }
+
+
 }
 
 export default Vector2D
 
 
-let myvec = new Vector2D(100, 100)
+/* let myvec = new Vector2D(100, 100)
 myvec.len = 1
 myvec.ang = 0
 myvec.rotate(Math.PI)
 
-console.log(myvec)
+console.log(myvec) */
