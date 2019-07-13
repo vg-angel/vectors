@@ -1,8 +1,5 @@
-import Node from "./Node";
-
-const myNode = new Node(12, new Node(13)) 
+import Vector2D from "./vec2/vec2";
 
 export {
-    Node,
-    myNode
+    Vector2D
 }

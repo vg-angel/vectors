@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const vector_1 = require("../abstract/vector");
 class Vector2D extends vector_1.default {
     constructor(x, y) {
-        super(x, y); // this gives us 'this.data' property
+        super(x, y);
         return this;
     }
     get x() {
@@ -60,7 +60,6 @@ class Vector2D extends vector_1.default {
         console.log(" x: ", this.x, "\n", "y: ", this.y, "\n", "len: ", this.len, "\n", "ang: ", (() => {
             let ang = this.ang;
             if (this.ang < 0) {
-                console.log(ang);
                 ang = Math.PI * 2 + ang;
             }
             return ang * 180 / Math.PI;
@@ -91,6 +90,13 @@ class Vector2D extends vector_1.default {
     }
     static clone(vec) {
         return new Vector2D(vec.x, vec.y);
+    }
+    static dot(vec1, vec2) {
+        return vec1.x * vec2.x + vec1.y * vec2.y;
+    }
+    static angleBeet(vec1, vec2) {
+        let dot = Vector2D.dot(vec1, vec2), l1 = vec1.len, l2 = vec2.len;
+        return Math.acos(dot / l1 * l2);
     }
 }
 exports.default = Vector2D;
