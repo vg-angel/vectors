@@ -1,11 +1,9 @@
 import Vector from "../abstract/vector";
+import { isRegExp } from "util";
 
 class Vector2D extends Vector{
     constructor(x: number, y: number){
         super(x, y)    // this gives us 'this.data' property
-        this.len = Math.hypot(x, y)
-        this.ang = Math.atan2(x, y)
-        let l = 12
         return this
     }
     get x(){
@@ -27,12 +25,14 @@ class Vector2D extends Vector{
         return Math.atan2(this.y, this.x)
     }
     set len(len: number){
-        this.x = Math.cos(this.ang)*len
-        this.y = Math.sin(this.ang)*len
+        let ang = this.ang
+        this.x = Math.cos(ang)*len
+        this.y = Math.sin(ang)*len
     }
     set ang(ang: number){
-        this.x = Math.cos(ang)*this.len
-        this.y = Math.sin(ang)*this.len
+        let len = this.len
+        this.x = Math.cos(ang)*len
+        this.y = Math.sin(ang)*len
     }
 
     unit(){
@@ -52,17 +52,26 @@ class Vector2D extends Vector{
         this.x = 0
         this.y = 0
     }
+    rotate(angle: number){
+        let actual = this.ang
+        this.ang = actual + angle
+        return this
+    }
     log(){
         console.log(
             " x: ",   this.x,  "\n",
              "y: ",   this.y,  "\n",
              "len: ", this.len,  "\n",
-             "ang: ", this.ang*180/Math.PI), "degrees" , "\n"
-        return this
-    }
-    rotate(angle: number){
-        this.ang = this.ang + angle
-        return this
+             "ang: ", (()=>{
+                 let ang = this.ang
+                 if(this.ang < 0){
+                     console.log(ang)
+                     ang = Math.PI*2 + ang
+                 }
+                 return ang * 180/Math.PI
+             })()
+             )
+                return "data"
     }
     static distance(vec1: Vector2D, vec2: Vector2D){
         let dy = vec1.y - vec2.y,
@@ -96,5 +105,8 @@ export default Vector2D
 
 
 let myvec = new Vector2D(100, 100)
+myvec.len = 1
+myvec.ang = 0
+myvec.rotate(Math.PI)
 
 console.log(myvec)
