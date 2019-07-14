@@ -7,7 +7,14 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "globals.js",
+            "program": "${workspaceFolder}/out/src/globals.js"
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "vec2.js",
             "program": "${workspaceFolder}/out/src/vec2/vec2.js"
         },
         {

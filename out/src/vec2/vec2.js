@@ -7,6 +7,7 @@ class Vector2D extends vector_1.default {
         super(x, y);
         return this;
     }
+    //getters and setters
     get x() {
         return this.data[0];
     }
@@ -35,6 +36,7 @@ class Vector2D extends vector_1.default {
         this.x = Math.cos(ang) * len;
         this.y = Math.sin(ang) * len;
     }
+    //public methods
     unit() {
         return Vector2D.unit(new Vector2D(this.x, this.y));
     }
@@ -66,6 +68,15 @@ class Vector2D extends vector_1.default {
         })());
         return "data";
     }
+    //static methods
+    static random(limits) {
+        if (!limits) {
+            limits = [0, 100];
+        }
+        let x = globals_1.randomInt(limits);
+        let y = globals_1.randomInt(limits);
+        return new Vector2D(x, y);
+    }
     static distance(vec1, vec2) {
         let dy = vec1.y - vec2.y, dx = vec1.x - vec2.x;
         return Math.hypot(dy, dx);
@@ -81,6 +92,10 @@ class Vector2D extends vector_1.default {
             output.len = 1;
         }
         return output;
+    }
+    static totalEqual(vec1, vec2) {
+        return vec1.len - vec2.len === 0 &&
+            vec1.ang - vec2.ang === 0;
     }
     static areEquals(vec1, vec2, boundary) {
         let b = boundary || 1;

@@ -1,11 +1,14 @@
 import Vector from "../abstract/vector";
-import {EPSILON, toDegrees} from "../globals";
+import {EPSILON, toDegrees, randomInt} from "../globals";
 
 class Vector2D extends Vector{
     constructor(x: number, y: number){
         super(x, y)
         return this
     }
+
+    //getters and setters
+
     get x(){
         return this.data[0]
     }
@@ -35,7 +38,7 @@ class Vector2D extends Vector{
         this.y = Math.sin(ang)*len
     }
 
-
+    //public methods
 
     unit(){
       return Vector2D.unit(new Vector2D(this.x, this.y))
@@ -74,6 +77,18 @@ class Vector2D extends Vector{
     }
 
 
+    //static methods
+
+    static random(limits?: [number, number]){
+        
+        if(!limits) {limits = [0, 100]}
+
+        let x = randomInt(limits)
+        let y = randomInt(limits)
+
+        return new Vector2D(x, y)
+
+    }
     static distance(vec1: Vector2D, vec2: Vector2D){
         let dy = vec1.y - vec2.y,
             dx = vec1.x - vec2.x;
@@ -90,6 +105,11 @@ class Vector2D extends Vector{
         }
         return output 
     }
+
+    static totalEqual(vec1: Vector2D, vec2: Vector2D){
+        return vec1.len - vec2.len === 0 &&
+               vec1.ang - vec2.ang === 0
+    }
     static areEquals(vec1: Vector2D, vec2: Vector2D, boundary?: number){
         let b = boundary || 1
 
@@ -104,10 +124,10 @@ class Vector2D extends Vector{
     }
     static angleBeet(vec1: Vector2D, vec2: Vector2D){
         let dot = Vector2D.dot(vec1, vec2),
-            l1 = vec1.len, l2 = vec2.len;
+            l1 = vec1.len,
+            l2 = vec2.len;
         return Math.acos(dot/l1*l2)
     }
-
 
 }
 export default Vector2D

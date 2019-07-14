@@ -2,7 +2,7 @@
  * @params ..args the arguments to use as coordinates; x, y, z, ...
  * @var data - a Float32 array to store the coordinjates
  */
-class Vector{
+abstract class Vector{
     protected data: Float32Array
     protected constructor(...args: number[]){
         let data: Float32Array
