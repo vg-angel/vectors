@@ -23,13 +23,13 @@ class Vector2D extends vector_1.default {
     get len() {
         return Math.hypot(this.y, this.x);
     }
-    get ang() {
-        return Math.atan2(this.y, this.x);
-    }
     set len(len) {
         let ang = this.ang;
         this.x = Math.cos(ang) * len;
         this.y = Math.sin(ang) * len;
+    }
+    get ang() {
+        return Math.atan2(this.y, this.x);
     }
     set ang(ang) {
         let len = this.len;
@@ -37,8 +37,8 @@ class Vector2D extends vector_1.default {
         this.y = Math.sin(ang) * len;
     }
     //public methods
-    unit() {
-        return Vector2D.unit(new Vector2D(this.x, this.y));
+    norm() {
+        return Vector2D.norm(new Vector2D(this.x, this.y));
     }
     update(x, y) {
         this.x = x;
@@ -71,7 +71,7 @@ class Vector2D extends vector_1.default {
     //static methods
     static random(limits) {
         if (!limits) {
-            limits = [0, 100];
+            limits = [0, 300];
         }
         let x = globals_1.randomInt(limits);
         let y = globals_1.randomInt(limits);
@@ -81,7 +81,7 @@ class Vector2D extends vector_1.default {
         let dy = vec1.y - vec2.y, dx = vec1.x - vec2.x;
         return Math.hypot(dy, dx);
     }
-    static unit(vec1) {
+    static norm(vec1) {
         let output;
         if (vec1) {
             let { len, x, y } = vec1;
