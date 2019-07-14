@@ -84,9 +84,8 @@ class Vector2D extends vector_1.default {
     }
     static areEquals(vec1, vec2, boundary) {
         let b = boundary || 1;
-        let test = Math.abs(vec1.len - vec2.len) <= globals_1.EPSILON + b &&
+        return Math.abs(vec1.len - vec2.len) <= globals_1.EPSILON + b &&
             Math.abs(vec1.ang - vec2.ang) <= globals_1.EPSILON + b;
-        return test;
     }
     static clone(vec) {
         return new Vector2D(vec.x, vec.y);
@@ -100,7 +99,4 @@ class Vector2D extends vector_1.default {
     }
 }
 exports.default = Vector2D;
-
-console.log("finally");
-let vec = new Vector2D(10, 10);
 //# sourceMappingURL=vec2.js.map

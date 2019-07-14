@@ -1,5 +1,5 @@
 import Vector from "../abstract/vector";
-import { EPSILON, toDegrees , toRadians} from "../globals";
+import {EPSILON, toDegrees} from "../globals";
 
 class Vector2D extends Vector{
     constructor(x: number, y: number){
@@ -92,10 +92,9 @@ class Vector2D extends Vector{
     }
     static areEquals(vec1: Vector2D, vec2: Vector2D, boundary?: number){
         let b = boundary || 1
-        let test =
-        Math.abs( vec1.len - vec2.len ) <= EPSILON+b &&
-        Math.abs( vec1.ang - vec2.ang ) <= EPSILON+b
-        return test
+
+        return Math.abs(vec1.len - vec2.len) <= EPSILON + b &&
+               Math.abs(vec1.ang - vec2.ang) <= EPSILON + b
     }
     static clone(vec: Vector2D){
         return new Vector2D(vec.x, vec.y)
@@ -111,8 +110,4 @@ class Vector2D extends Vector{
 
 
 }
-
 export default Vector2D
-console.log("finally")
-
-let vec = new Vector2D(10,10)
