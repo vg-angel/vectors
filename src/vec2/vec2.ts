@@ -1,4 +1,5 @@
 import Vector from "../abstract/vector";
+import { EPSILON, toDegrees , toRadians} from "../globals";
 
 class Vector2D extends Vector{
     constructor(x: number, y: number){
@@ -54,8 +55,7 @@ class Vector2D extends Vector{
         this.y = 0
     }
     rotate(angle: number){
-        let actual = this.ang
-        this.ang = actual + angle
+        this.ang = this.ang + angle
         return this
     }
     log(){
@@ -68,7 +68,7 @@ class Vector2D extends Vector{
                  if(this.ang < 0){
                      ang = Math.PI*2 + ang
                  }
-                 return ang * 180/Math.PI
+                 return toDegrees(ang)
              })())
             return "data"
     }
@@ -113,3 +113,6 @@ class Vector2D extends Vector{
 }
 
 export default Vector2D
+console.log("finally")
+
+let vec = new Vector2D(10,10)

@@ -1,1 +1,0 @@
-//# sourceMappingURL=VectorInterface.js.map

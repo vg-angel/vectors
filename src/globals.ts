@@ -6,3 +6,9 @@ function toDegrees(radian: number){
 function toRadians(degree: number){
     return degree * Math.PI/180
 }
+
+export {
+    EPSILON,
+    toDegrees,
+    toRadians
+}

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const vector_1 = require("../abstract/vector");
+const globals_1 = require("../globals");
 class Vector2D extends vector_1.default {
     constructor(x, y) {
         super(x, y);
@@ -52,8 +53,7 @@ class Vector2D extends vector_1.default {
         this.y = 0;
     }
     rotate(angle) {
-        let actual = this.ang;
-        this.ang = actual + angle;
+        this.ang = this.ang + angle;
         return this;
     }
     log() {
@@ -62,7 +62,7 @@ class Vector2D extends vector_1.default {
             if (this.ang < 0) {
                 ang = Math.PI * 2 + ang;
             }
-            return ang * 180 / Math.PI;
+            return globals_1.toDegrees(ang);
         })());
         return "data";
     }
@@ -84,8 +84,8 @@ class Vector2D extends vector_1.default {
     }
     static areEquals(vec1, vec2, boundary) {
         let b = boundary || 1;
-        let test = Math.abs(vec1.len - vec2.len) <= Number.EPSILON + b &&
-            Math.abs(vec1.ang - vec2.ang) <= Number.EPSILON + b;
+        let test = Math.abs(vec1.len - vec2.len) <= globals_1.EPSILON + b &&
+            Math.abs(vec1.ang - vec2.ang) <= globals_1.EPSILON + b;
         return test;
     }
     static clone(vec) {
@@ -100,9 +100,7 @@ class Vector2D extends vector_1.default {
     }
 }
 exports.default = Vector2D;
-let myvec = new Vector2D(100, 100);
-myvec.len = 1;
-myvec.ang = 0;
-myvec.rotate(Math.PI);
-console.log(myvec);
+
+console.log("finally");
+let vec = new Vector2D(10, 10);
 //# sourceMappingURL=vec2.js.map
