@@ -2,7 +2,9 @@ import Vector from "../abstract/vector";
 import {EPSILON, toDegrees, randomInt} from "../globals";
 
 class Vector2D extends Vector{
-    constructor(x: number, y: number){
+    constructor(x?: number, y?: number){
+        x = x || 0
+        y = x || 0
         super(x, y)
         return this
     }
@@ -146,6 +148,28 @@ class Vector2D extends Vector{
             l2 = vec2.len;
         return Math.acos(dot/l1*l2)
     }
-
+    static add(a: Vector2D, b: Vector2D){
+        let out = new Vector2D()
+        out.x = a.x + b.x
+        out.y = a.y + b.y
+        return out
+    }
+    static sub(a: Vector2D, b:Vector2D){
+        let out = new Vector2D()
+        out.x = a.x + b.x
+        out.y = a.y + b.y
+    }
+    static mul(a: Vector2D, n: number){
+        let out = new Vector2D()
+        out.x = a.x * n
+        out.y = a.y * n
+        return out
+    }
+    static div(a: Vector2D, n: number){
+        let out = new Vector2D()
+        out.x = a.x / n
+        out.y = a.y / n
+        return out
+    }
 }
 export default Vector2D

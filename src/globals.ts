@@ -1,5 +1,3 @@
-import Vector2D from "./vec2/vec2";
-
 let EPSILON: number = 1e-10
 
 function toDegrees(radian: number): number{
