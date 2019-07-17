@@ -3,7 +3,7 @@
 vg-vector has a really easy installation.
 
 ```sh
-                        npm i --save vg-vector
+                        npm i vg-vector
 ```
 
 Now, Inside a JS file you can call it as a normal module
@@ -16,7 +16,7 @@ Now, Inside a JS file you can call it as a normal module
 
 |Github|
 |------|
-|https://github.com/vg-angel/vectors|
+|https://github.com/vg-angel/vg-vectors|
 
 ### Head-ups
 
