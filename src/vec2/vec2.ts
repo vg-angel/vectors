@@ -4,7 +4,7 @@ import {EPSILON, toDegrees, randomInt} from "../globals";
 class Vector2D extends Vector{
     constructor(x?: number, y?: number){
         x = x || 0
-        y = x || 0
+        y = y || 0
         super(x, y)
         return this
     }
@@ -68,6 +68,7 @@ class Vector2D extends Vector{
     zero(){
         this.x = 0
         this.y = 0
+        return this
     }
 
     rotate(angle: number){
@@ -156,8 +157,9 @@ class Vector2D extends Vector{
     }
     static sub(a: Vector2D, b:Vector2D){
         let out = new Vector2D()
-        out.x = a.x + b.x
-        out.y = a.y + b.y
+        out.x = a.x - b.x
+        out.y = a.y - b.y
+        return out
     }
     static mul(a: Vector2D, n: number){
         let out = new Vector2D()

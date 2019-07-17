@@ -1,11 +1,11 @@
 {
   "name": "vg-vector",
-  "version": "1.0.7",
+  "version": "1.1.8",
   "description": "A fast and extensible library to perform operations with vectors",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "server": "webpack-dev-server",
     "buildjs": "tsc"
   },

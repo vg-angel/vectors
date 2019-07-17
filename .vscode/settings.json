@@ -1,8 +1,6 @@
 {
     "files.exclude": {
         ".idea": true,
-        ".vscode": true,
-        "**/node_modules": true,
-        "**/out": true
+        ".vscode": true
     }
 }
