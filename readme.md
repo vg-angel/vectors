@@ -3,7 +3,7 @@
 vg-vector has a really easy installation.
 
 ```sh
-                    npm install --save vg-vector
+                        npm i --save vg-vector
 ```
 
 Now, Inside a JS file you can call it as a normal module
