@@ -1,24 +1,27 @@
-### installation
+## Installation
 
 vg-vector has a really easy installation.
 
-```sh
-                        npm i vg-vector
+```node
+                           npm i vg-vector
 ```
 
 Now, Inside a JS file you can call it as a normal module
 
-```sh
+```node
                     import { Vector2D } from "vg-vector"
 ```
-
-### Development
+or if you are usign commonjs modules
+```
+                  const { Vector2D } = require("vg-vector")
+```
+## Development
 
 |Github|
 |------|
-|https://github.com/vg-angel/vg-vectors|
+|https://github.com/vg-angel/vg-vector|
 
-### Head-ups
+## Head-ups
 
 vg-vector can work with both [Node.js](https://nodejs.org/) for server side or browsers like chrome, mozilla, opera, etc, for client side.
 
@@ -26,9 +29,9 @@ Actually there is only one subclass 'Vector2D' tha comes from the main class Vec
 
 'Vector2D' and 'Vector3D' and 'Quaternions' will be created with the purpose to work in the field of computer graphics.  
 
-Methods directly inherited from the class 'Vector2D' are mutable, but there exist the static vertion for each fucntion 
+Methods directly inherited from the class 'Vector2D' are mutable, but there exist the static vertion for each function that is immutable.
 
-### Author
+## Author
 
 |Name:|Angel Vega Garcia|
 |-----|-----------------|
