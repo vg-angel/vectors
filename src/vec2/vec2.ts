@@ -3,9 +3,7 @@ import {EPSILON, toDegrees, randomInt} from "../globals";
 
 class Vector2D extends Vector{
     constructor(x?: number, y?: number){
-        x = x || 0
-        y = y || 0
-        super(x, y)
+        super(x || 0, y || 0)
         return this
     }
     
