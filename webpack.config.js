@@ -5,7 +5,8 @@ module.exports = {
     output: {
         filename: "index.js",
         path: path.join(__dirname, "dist"),
-        libraryTarget: 'var'
+        libraryTarget: 'var',
+        library: "Vector2D"
     },
     devServer: {
         port: 3000,
