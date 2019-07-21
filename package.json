@@ -3,9 +3,8 @@
   "version": "1.2.10",
   "description": "A fast and extensible library to perform operations with vectors",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "server": "webpack-dev-server",
     "buildjs": "tsc"
   },

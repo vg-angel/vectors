@@ -5,6 +5,5 @@
         "outDir": "./out",
         "sourceMap": true,
         "watch": true,
-        "declaration": true
     }
 }
