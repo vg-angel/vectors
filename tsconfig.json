@@ -6,9 +6,5 @@
         "sourceMap": true,
         "watch": true,
         "declaration": true
-    },
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+    }
 }
