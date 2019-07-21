@@ -1,6 +1,7 @@
 {
     "files.exclude": {
         ".idea": true,
-        ".vscode": true
+        ".vscode": true,
+        "**/.git": false
     }
 }
