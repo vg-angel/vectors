@@ -5,7 +5,7 @@ module.exports = {
     output: {
         filename: "index.js",
         path: path.join(__dirname, "dist"),
-        libraryTarget: 'var',
+        libraryTarget: "commonjs2",
     },
     devServer: {
         port: 3000,
