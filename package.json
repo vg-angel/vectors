@@ -1,6 +1,6 @@
 {
   "name": "vg-vector",
-  "version": "1.2.13",
+  "version": "1.2.14",
   "description": "A fast and extensible library to perform operations with vectors",
   "main": "./dist/index.js",
   "scripts": {
