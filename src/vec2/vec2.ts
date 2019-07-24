@@ -16,6 +16,13 @@ class Vector2D extends Vector{
         set mag(val: number){
             this.len = val 
         }
+        /** The direction (angle) of a vector */
+        get dir(){
+            return this.ang
+        }
+        set dir(val: number){
+            this.ang = val
+        }
 
     
     //<--- GETTERS AND SETTERS --->
