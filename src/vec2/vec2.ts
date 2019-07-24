@@ -16,7 +16,7 @@ class Vector2D extends Vector{
         set mag(val: number){
             this.len = val 
         }
-        /** The direction (angle) of a vector */
+        /** The direction (angle) of a */
         get dir(){
             return this.ang
         }
@@ -162,10 +162,6 @@ class Vector2D extends Vector{
     /** Create a new Vector2D from parameter */
     static clone(vec: Vector2D){
         return new Vector2D(vec.x, vec.y)
-    }
-    /** Calculate the dot product between two Vectors2D */
-    static dot(vec1: Vector2D, vec2: Vector2D){
-        return vec1.x*vec2.x + vec1.y*vec2.y
     }
     /** Calculate the agnle between two Vectors2D */
     static angleBet(vec1: Vector2D, vec2: Vector2D){

@@ -37,9 +37,23 @@ abstract class Vector{
         return this
     }
     dot(vec: Vector){
+        if(vec.data.length !== this.data.length){
+            throw new Error("Vector must have same dimension")
+        }
         let sum = 0
         for (let i = 0; i < this.data.length; i++) {
             sum += this.data[i] * vec.data[i] 
+        }
+        return sum
+    }
+    /** Calculate the dot product between two Vectors2D */
+    static dot(vec1: Vector, vec2: Vector){
+        if(vec1.data.length !== vec2.data.length){
+            throw new Error("Vectors must have same dimension")
+        }
+        let sum = 0
+        for(let i=0 ; i<vec1.data.length ; i++){
+            sum += vec1[i]*vec2[i]
         }
         return sum
     }
