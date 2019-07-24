@@ -6,6 +6,17 @@ class Vector2D extends Vector{
         super(x || 0, y || 0)
         return this
     }
+
+    // <--- ALIASES --->
+
+        /** The magnitude (length) of a vector */
+        get mag(){
+            return this.len
+        }
+        set mag(val: number){
+            this.len = val 
+        }
+
     
     //<--- GETTERS AND SETTERS --->
 
@@ -74,6 +85,11 @@ class Vector2D extends Vector{
     rotate(angle: number){
         this.ang = this.ang + angle
         return this
+    }
+    /** Clone the actual vector (the vector tou are using to call the this function)*/
+    clone(){
+        let out = Vector2D.clone(this)
+        return out
     }
     /** Print info on the console regarding the source Vector(debugging purposes) */
     log(){
@@ -178,6 +194,12 @@ class Vector2D extends Vector{
         out.x = a.x / n
         out.y = a.y / n
         return out
+    }
+    /** The projection of the vector 'a' on 'b' is a new vector with same angle as 'b' */
+    static projection(a: Vector2D, b: Vector2D){
+        let dot = Vector2D.dot(a, b)
+        let square = b.len**2
+        return b.clone().mult(dot/square)
     }
 }
 export default Vector2D
